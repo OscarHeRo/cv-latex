@@ -461,7 +461,7 @@
               \setbool{istart}{false}
             }
             {\@headersocialsep}
-          \href{https://angel.co/\@linkedin}{\faLinkedinSquare\ \@linkedin}
+            \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\ \@linkedin}
         }
       \ifthenelse{\isundefined{\@twitter}}
         {}
@@ -665,3 +665,4 @@
       \letterenclosurestyle{\@letterenclname:  \@letterenclosure} \\
     }
 }
+
