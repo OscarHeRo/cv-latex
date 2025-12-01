@@ -11,39 +11,41 @@
 \usepackage{import}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     Datos Personales
+%     Personal Data
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Esenciales
+%%% Essentials
 \name{Oscar David}{Hernández Rodríguez}
 \mobile{(477) 760-8225}
 %%% Social
 \email{oscarhe@ciencias.unam.mx}
 \github{OscarHeRo}
 \linkedin{oscar-hernández-460a481a2}
-\textit{Ciudad de México, México}
-%%% Opcionales
-\position{Pasante de Informatica}
-\quote{"Me gusta dar sentido a la complejidad a través del código, los datos y los sistemas que nos conectan."}
+\textit{Mexico City, Mexico}
+%%% Optionals
+\position{Java Full-Stack Developer{\enskip\cdotp\enskip}Computer Science Student}
+\quote{"Passionate about building robust systems through clean code, solid architecture, and continuous learning."}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%xx%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \makecvfooter
   {\today}
-  {Oscar David Hernández Rodríguez~~~·~~~Currículum}
+  {Oscar David Hernández Rodríguez~~~·~~~Résumé}
   {\thepage}
 
 \begin{document}
-%%% Encabezado
+%%% Header
 \makecvheader
 
-%%% Secciones
+%%% Secciones principales - optimizado para una página
 \import{\sectiondir}{education.tex}
+
 \import{\sectiondir}{experience.tex}
 \import{\sectiondir}{honors.tex}
 \import{\sectiondir}{skills.tex}
 
-\newpage
-\import{\sectiondir}{intencion.tex}
 
+%%% Perfil profesional en página separada
+\clearpage
+\import{\sectiondir}{intencion.tex}
 
 \end{document}

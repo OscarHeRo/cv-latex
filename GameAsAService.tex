@@ -1,0 +1,135 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% --- Paleta de colores personalizada ---
+\usepackage{xcolor}
+\definecolor{odhr-main}{HTML}{1A237E}      % Azul profundo
+\definecolor{odhr-accent}{HTML}{F9A825}    % Amarillo dorado
+\definecolor{odhr-soft}{HTML}{E3F2FD}      % Azul claro
+\definecolor{odhr-gray}{HTML}{616161}      % Gris oscuro
+
+% Fuente moderna (compatible con pdfLaTeX y XeLaTeX)
+\usepackage{lmodern}
+
+% Estilo de secciones y subsecciones
+\usepackage{sectsty}
+\sectionfont{\color{odhr-main}\bfseries\LARGE}
+\subsectionfont{\color{odhr-accent}\bfseries\large}
+
+% Formato de títulos con fondo y línea
+\titleformat{\section}
+  {\color{odhr-main}\bfseries\LARGE}
+  {\thesection.}
+  {1em}
+  {\colorbox{odhr-soft}{\parbox{\dimexpr\linewidth-2\fboxsep\relax}{\strut#1}}}
+\titleformat{\subsection}
+  {\color{odhr-accent}\bfseries\large}
+  {\thesubsection}
+  {1em}
+  {#1}
+\titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.5ex plus 1ex minus .2ex}{1ex plus .2ex}
+
+% Color para enlaces
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=odhr-main,
+    urlcolor=odhr-accent,
+    citecolor=odhr-main
+}
+
+% Opcional: color en tablas y citas
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\newtcolorbox{odhrbox}[1][]{colback=odhr-soft!80!white, colframe=odhr-main, fonttitle=\bfseries, title=#1, breakable}
+
+% Ejemplo de cita personalizada
+\renewenvironment{quote}
+  {\begin{odhrbox}[title=Cita]}
+  {\end{odhrbox}}
+
+% Opcional: color en listas
+\setlist[itemize]{label=\textcolor{odhr-accent}{\textbullet}}
+
+\geometry{a4paper, margin=2.5cm}
+\setlength{\parindent}{0pt}
+
+\title{\textbf{Inferencia Estadística Aplicada a la Evolución de los Videojuegos como Servicio (GaaS)}}
+\author{Oscar David Hernández Rodríguez \\ Facultad de Ciencias, UNAM}
+\date{Junio 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Resumen}
+Este proyecto propone un análisis estadístico de la evolución de la industria de videojuegos hacia el modelo \emph{Games as a Service} (GaaS), con base en la recolección de datos históricos sobre lanzamientos, formatos de comercialización y mecanismos de monetización. El objetivo es aplicar herramientas de inferencia estadística ---como la estimación puntual, la estimación por intervalos y la prueba de hipótesis--- para caracterizar patrones de cambio y proponer modelos explicativos.
+
+\section{Introducción}
+La industria de los videojuegos ha cambiado drásticamente en las últimas dos décadas. De un ecosistema dominado por títulos autocontenidos y adquiridos en formato físico o digital, se ha transitado hacia un modelo persistente, donde la monetización se realiza mediante servicios continuos, microtransacciones y ecosistemas cerrados. Este cambio profundo amerita un análisis desde una perspectiva estadística.
+
+\section{Motivación}
+Este proyecto nace del interés personal por la historia y evolución de los videojuegos. Como jugador activo desde la infancia, he observado la transición desde juegos Flash gratuitos en la web hasta títulos multijugador masivos con estructuras de monetización complejas. Esta transformación plantea preguntas importantes sobre el acceso, la propiedad y el diseño algorítmico en la industria actual.
+
+\section{Objetivos}
+\begin{itemize}
+    \item Aplicar técnicas de inferencia estadística clásica (estimación puntual, por intervalos y prueba de hipótesis) al análisis de la evolución del modelo de negocio en videojuegos.
+    \item Desarrollar herramientas de recolección automatizada de datos a partir de APIs públicas y fuentes estructuradas (por ejemplo, SteamCharts, IGDB, etc.).
+    \item Formular e intentar validar hipótesis sobre patrones temporales en la adopción del modelo GaaS.
+\end{itemize}
+
+\section{Marco Teórico}
+De acuerdo con la teoría clásica de la inferencia estadística, se parte de una muestra obtenida de una población para hacer conclusiones generales acerca de las características desconocidas de dicha población. Según el tipo de conclusión deseada, se distinguen los siguientes enfoques:
+
+\begin{enumerate}
+    \item \textbf{Estimación puntual:} obtener un valor numérico único que represente lo mejor posible el parámetro de interés.
+    \item \textbf{Estimación por intervalos:} construir un rango de valores con una probabilidad determinada de contener el verdadero parámetro.
+    \item \textbf{Pruebas de hipótesis:} contrastar aseveraciones sobre el valor del parámetro poblacional con base en la evidencia muestral.
+\end{enumerate}
+
+Además, se puede adoptar un enfoque alternativo desde la estadística bayesiana, donde el parámetro se modela como una variable aleatoria con distribución previa, y se actualiza mediante el teorema de Bayes con los datos observados.
+
+\section{Diseño Experimental}
+Se plantea un proceso iterativo con los siguientes pasos:
+\begin{enumerate}
+    \item Recolección de datos históricos sobre lanzamientos y monetización de videojuegos desde APIs como IGDB, Steam, etc.
+    \item Codificación de variables relevantes: año, tipo de modelo de negocio, duración promedio de vida activa, precio inicial, ingresos por microtransacciones, etc.
+    \item Aplicación de técnicas estadísticas:
+    \begin{itemize}
+        \item Estimación del porcentaje de videojuegos lanzados como GaaS por año.
+        \item Construcción de intervalos de confianza para proporciones y medias.
+        \item Contraste de hipótesis sobre la aceleración de la adopción del modelo GaaS.
+    \end{itemize}
+\end{enumerate}
+
+\section{Hipótesis de Trabajo}
+\begin{itemize}
+    \item \textbf{Hipótesis nula ($H_0$):} la proporción de videojuegos con modelo GaaS se ha mantenido constante en los últimos 10 años.
+    \item \textbf{Hipótesis alternativa ($H_1$):} la proporción de videojuegos GaaS ha aumentado significativamente en los últimos años.
+\end{itemize}
+
+\section{Conclusión Esperada}
+Se espera demostrar que la evolución hacia el modelo GaaS no ha sido aleatoria ni marginal, sino parte de una transformación estructural en la industria. Este proyecto combina la experiencia personal como jugador con una metodología científica rigurosa para analizar fenómenos culturales mediante estadística.
+
+\section*{Referencias}
+\begin{enumerate}
+    \item Casella, G. y Berger, R. L. (2001). \emph{Statistical Inference}. Duxbury Press.
+    \item Wasserman, L. (2004). \emph{All of Statistics}. Springer.
+    \item Sitios y APIs: \url{https://api.igdb.com}, \url{https://store.steampowered.com/stats/}
+\end{enumerate}
+
+\end{document}
