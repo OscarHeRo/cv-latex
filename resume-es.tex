@@ -1,0 +1,38 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[11pt, a4paper]{awesome-cv}
+
+\fontdir[fonts/]
+\newcommand*{\sectiondir}{resume/es/}
+
+\colorlet{awesome}{awesome-emerald}
+
+\usepackage{import}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Datos personales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\name{Oscar David}{Hernandez Rodriguez}
+\mobile{(477) 760-8225}
+\email{oscarhe@ciencias.unam.mx}
+\github{OscarHeRo}
+\linkedin{oscar-hernandez-460a481a2}
+\address{Ciudad de Mexico, Mexico}
+\position{Estudiante de Ciencias de la Computacion{\enskip\cdotp\enskip}Ingeniero de Software}
+\quote{"Me gusta darle sentido a la complejidad por medio de codigo, datos y sistemas de software."}
+
+\makecvfooter
+  {\today}
+  {Oscar David Hernandez Rodriguez~~~·~~~Curriculum}
+  {\thepage}
+
+\begin{document}
+\makecvheader
+
+\import{\sectiondir}{education.tex}
+\import{\sectiondir}{experience.tex}
+\import{\sectiondir}{projects.tex}
+\import{\sectiondir}{skills.tex}
+
+\end{document}
